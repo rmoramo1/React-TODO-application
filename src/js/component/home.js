@@ -20,7 +20,7 @@ export function Home() {
 					<input
 						className="form-control"
 						type="text"
-						placeholder="Agrega una Tarea"
+						value={tarea}
 						onChange={e => setTarea(e.target.value)}></input>
 				</div>
 				<div className="col-3">
