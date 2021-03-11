@@ -9,7 +9,11 @@ export function Home() {
 		setlistaTareas([...listaTareas, tarea]);
 		setTarea("");
 	};
-
+	const DeleteItems = indexItem => {
+		setlistaTareas(prevState =>
+			prevState.filter((todo, index) => index !== indexItem)
+		);
+	};
 	return (
 		<div className="col-6 mx-auto text-center bg-white shadow mt-5 rounded pb-5">
 			<div className="row">
@@ -34,6 +38,11 @@ export function Home() {
 							return (
 								<li key={index} className="list-group-item">
 									{item}
+									<button
+										className="btn"
+										onClick={() => DeleteItems(index)}>
+										<i className="fas fa-trash-alt" />
+									</button>
 								</li>
 							);
 						})}
