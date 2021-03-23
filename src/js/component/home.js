@@ -6,8 +6,12 @@ export function Home() {
 	const [listaTareas, setlistaTareas] = useState([]);
 
 	const agregarTarea = () => {
-		setlistaTareas([...listaTareas, tarea]);
-		setTarea("");
+		if (tarea == "") {
+			alert("Por Favor Agrega una tarea");
+		} else {
+			setlistaTareas([...listaTareas, tarea]);
+			setTarea("");
+		}
 	};
 	const DeleteItems = indexItem => {
 		setlistaTareas(prevState =>
